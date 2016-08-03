@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <script src="includes/js/modernizr-2.6.2.min.js"></script>
+    <link href="includes/css/font-awesome.min.css" rel="stylesheet">
+    <link href="includes/css/JSONServerStyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="head row">
+            <div class="col-sm-12">
+                <h1>Search Employee Details</h1>
+            </div>
+        </div>
+        <div class="row body-Section">
+            <div class="container">
+                <div class="col-sm-12">
+                    <form class="form-group">
+                        <div>
+                            <input type="text" name="searchText" class="textClass" placeholder="Enter Name">
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-default searchEmployeeButton"><span class="glyphicon glyphicon-search"></span>Search</button>
+                        </div>
+                        <div class="bottomButtons">
+                            <a href="#myModal" role="button" class="btn btn-default addEmployee" data-toggle="modal">
+                                <span class="glyphicon glyphicon-plus">   
+                    </span> Add Employee
+                            </a>
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Employee</h4>
+                                        </div>
+                                        <!-- end modal-header -->
+                                        <div class="modal-body">
+                                            <form id="emp" class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputName">Name</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="nameText" placeholder="Name" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputAge">Age</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="ageText" placeholder="Age" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputEmail">Email</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="emailText" placeholder="Email" type="email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputGender">Gender</label>
+                                                    <div class="radio col-lg-10">
+                                                        <label>
+                                                            <input type="radio" name="optradio" id="maleRadio" value="Male">Male</label>
+                                                        <label>
+                                                            <input type="radio" name="optradio" id="femaleRadio" value="female">Female</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputCompany">Company</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="companyText" placeholder="Company" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputPhone">Phone</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="phoneText" placeholder="Phone" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputAddress">Address</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="addressText" placeholder="Address" type="text">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- end modal-body -->
+                                        <div class="modal-footer footerAdd">
+                                            <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+                                            <button class="btn btn-primary addEmpButton" type="button">Add</button>
+                                        </div>
+                                        <!-- end modal-footer -->
+                                    </div>
+                                    <!-- end modal-content -->
+                                </div>
+                                <!-- end modal-dialog -->
+                            </div>
+                            <!-- end myModal -->
+                            <div class="modal fade" id="myUpdateModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Update Details</h4>
+                                        </div>
+                                        <!-- end modal-header -->
+                                        <div class="modal-body">
+                                            <form id="emp" class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputName">Name</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="nameUpdateText" placeholder="Name" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputAge">Age</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="ageUpdateText" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputEmail">Email</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="emailUpdateText" placeholder="Email" type="email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputGender">Gender</label>
+                                                    <div class="radio col-lg-10">
+                                                        <label>
+                                                            <input type="radio" name="optradio" id="maleUpdateRadio" value="Male">Male</label>
+                                                        <label>
+                                                            <input type="radio" name="optradio" id="femaleUpdateRadio" value="female">Female</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputCompany">Company</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="companyUpdateText" placeholder="Company" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputPhone">Phone</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="phoneUpdateText" placeholder="Phone" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label" for="inputAddress">Address</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control" id="addressUpdateText" placeholder="Address" type="text">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- end modal-body -->
+                                        <div class="modal-footer">
+                                            <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+                                            <button class="btn btn-primary updateEmpButton" type="button">Update</button>
+                                        </div>
+                                        <!-- end modal-footer -->
+                                    </div>
+                                    <!-- end modal-content -->
+                                </div>
+                                <!-- end modal-dialog -->
+                            </div>
+                            <!-- end myModal -->
+                            <button type="button" class="btn btn-default searchAllEmployeesButton"><span class="glyphicon glyphicon-search"></span>Search All Employees</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container table-container">
+                <div class="col-sm-6">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" class="previous">
+                                    <span aria-hidden="true">&laquo;</span>Prev
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="next">Next
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-sm-6 alert-message">    
+                </div>
+                <div class="col-sm-12 table-Content">
+                    <div class="table-Section table-responsive">
+                        <table id="myTable" align="center" class="table">
+                            <tr>
+                                <th>EmployeeId</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Company</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th class="operations">Operations</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--end table-Section-->
+                </div>
+                <!--end col-sm-12-->
+                <div class="col-sm-12 page-navigator">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" class="previous">
+                                    <span aria-hidden="true">&laquo;</span>Prev
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="next">Next
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--end container-->
+        </div>
+        <!--end row-->
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')
+    </script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="includes/js/JSONServerScript.js"></script>
+</body>
+
+</html>
